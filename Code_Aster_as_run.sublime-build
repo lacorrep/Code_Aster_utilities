@@ -1,0 +1,6 @@
+{
+    // replace by the correct path to as_run.bat
+    "cmd": ["C:/Users/__USERNAME__/AppData/Local/code_aster/v2021/bin/as_run.bat", "$file"],
+    // "selector": "source.export" // did not work
+    "file_patterns": ["*export"], // https://stackoverflow.com/questions/60042073/sublimetext-3-build-system-based-on-file-path
+}
