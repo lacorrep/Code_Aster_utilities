@@ -1,4 +1,4 @@
-# A simple REPL (for Code_Aster, by EDF)
+# A simple REPL for Code_Aster
 
 > REPL : read-eval-print loop.
 
@@ -6,7 +6,7 @@
 
 ## Motivation
 
-I created this REPL for using Code_Aster by EDF, but **it can be used in anything that understands Python code (and `tkinter`)**. This greatly reduced the learning curve of Code_Aster for me.
+I created this REPL for using Code_Aster by EDF, but **it can be used in anything that understands Python code (and includes `tkinter`)**. This greatly reduced the learning curve of Code_Aster for me.
 
 Although [Code_Aster](https://code-aster.org/spip.php?rubrique2) can be controlled using Python scripts, the `.comm` files cannot be run directly (one must use an `export` file) and it is enclosed in a virtual environments that makes interactive execution difficult.
 Luckily, `tkinter` is included by default in Python and this lets us display a small interface to test code. The execution is paused until the REPL is closed.
@@ -58,3 +58,10 @@ The menu bar contains some useful snippets of code.
 ## Acknowledgements
 
 Thanks to [SimulEase](https://simulease.com/index.php/en/home/) for making Salome-Meca and Code_Aster available on Windows.
+
+
+---
+
+# Sublime Text 3 builder for `export` files
+If you use the [Sublime Text](https://www.sublimetext.com/) text editor, this allows you to call `as_run` with the active `export` file by pressing Ctrl+B.
+Simply put `Code_Aster_as_run.sublime-build` in your User folder ("Preferences > Browse Packages... > User") and edit the file to set the correct path to your `as_run.bat`.
