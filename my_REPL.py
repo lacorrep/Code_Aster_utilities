@@ -173,6 +173,27 @@ coords = mapy.cn[ np.unique([mapy.co[i] for i in mapy.gma['ELEMENTGROUP'] ]), : 
 """[key for key,val in result.LIST_CHAMPS().items() if len(val)>0]
 """))
     # -----
+    menu_commands.add_separator()
+    # -----
+    menu_commands.add_command(label="Install matplotlib",
+        command=lambda: write_command_in_input(
+"""
+try:
+    import matplotlib
+    print("Matplotlib is already installed!")
+except ModuleNotFoundError:
+    import subprocess
+    import sys
+    # # Check NumPy version
+    # subprocess.check_call([sys.executable, "-m", "pip", "list"])
+    # # Upgrade pip (may work without this step, I haven't tried)
+    # subprocess.check_call([sys.executable, "-m", "pip", "install", "--upgrade", "pip"])
+    # Install matplotlib 3.4 for compatibility with NumPy 1.16
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "matplotlib==3.4"])
+except Exception as exc:
+    print("Unexpected error", exc)
+"""))
+    # -----
     menubar.add_cascade(label="Code snippets", menu=menu_commands)
 
 
