@@ -80,10 +80,10 @@ def my_repl(first_commands=[]):
     menu_commands = tk.Menu(menubar, tearoff=False)
 
     # -----
-    menu_commands.add_command(label="Display attributes of an object",
+    menu_commands.add_command(label="Display attributes and methods of an object",
         command=lambda: write_command_in_input("dir(obj)"))
     # -----
-    menu_commands.add_command(label="Get mesh nodes",
+    menu_commands.add_command(label="Get mesh nodes from field",
         command=lambda: write_command_in_input("champ.getMesh().getNodes()"))
     # -----
     menu_commands.add_command(label="MAIL_PY()",
@@ -92,8 +92,9 @@ def my_repl(first_commands=[]):
 mapy = MAIL_PY()
 mapy.FromAster(mesh)
 # mapy.cn # coordinates table
-# mapy.gno #dict of node groups
-# mapy.gma #dict of element groups
+# mapy.co # connectivity table
+# mapy.gno # dict of node groups
+# mapy.gma # dict of element groups
 # print(dir(mapy))"""))
     # -----
     menu_commands.add_command(label="Get displacements at nodes",
