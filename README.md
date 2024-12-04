@@ -31,6 +31,7 @@ Examples:
 my_repl() # open the REPL
 my_repl("# DEBUT") # open and execute a command (a comment in this case)
 my_repl(["mail = MAIL_PY()", "mail.FromAster(mesh)"]) # run several commands after opening the REPL
+my_repl("# We're inside a function", locals()) # access local scope
 ```
 
 If the command was processed using...
@@ -43,7 +44,7 @@ If the command was processed using...
 The menu bar contains some useful snippets of code.
 
 ## Keyboard shortcuts
-* `<Up>`: restore last command
+* `<Up>`: restore previous command
 * `<Enter>`: execute command
 * `<Ctrl>+l` (Ctrl+L): clear previous outputs
 
@@ -51,9 +52,9 @@ The menu bar contains some useful snippets of code.
 
 * If the REPL is open and the export file is called again, the execution ends with EXIT_CODE=4. Simply run the `export` file again and it will work.
 * It is currently not possible to skip a line or move the cursor up while editing your commands.
-* Only the last command is kept in history (can't press `<Up>` again to access previously run commands).
 * Sometimes `print` prints to the `as_run` log instead of the REPL. Or it doesn't print anything. Maybe I should overwrite the `print` function with `write_to_console`.
 * No syntax highlighting.
+* No autocompletion when pressing `<Tab>`.
 
 ## Acknowledgements
 
@@ -65,3 +66,5 @@ Thanks to [SimulEase](https://simulease.com/index.php/en/home/) for making Salom
 # Sublime Text 3 builder for `export` files
 If you use the [Sublime Text](https://www.sublimetext.com/) text editor, this allows you to call `as_run` with the active `export` file by pressing Ctrl+B.
 Simply put `Code_Aster_as_run.sublime-build` in your User folder ("Preferences > Browse Packages... > User") and edit the file to set the correct path to your `as_run.bat`.
+
+`Code_Aster_as_run_COMM.sublime-build` will call the `export` file that has the same base name as the `*.comm` file you're building (`Ctrl + B `).

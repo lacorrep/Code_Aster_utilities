@@ -1,0 +1,6 @@
+// Calls the .export file with the same name (Aster 2023)
+{
+    // replace by the correct path to as_run.bat
+    "cmd": ["C:/Users/__USERNAME__/AppData/Local/code_aster/v2023/bin/as_run.bat", "$file_base_name.export"],
+    "file_patterns": ["*.comm"],
+}
