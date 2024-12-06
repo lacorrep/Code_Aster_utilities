@@ -46,7 +46,7 @@ The menu bar contains some useful snippets of code.
 ## Keyboard shortcuts
 * `<Up>`: restore previous command
 * `<Enter>`: execute command
-* `<Ctrl>+l` (Ctrl+L): clear previous outputs
+* `Ctrl + L`: clear previous outputs
 
 ## Known issues / possible improvements
 
@@ -67,4 +67,4 @@ Thanks to [SimulEase](https://simulease.com/index.php/en/home/) for making Salom
 If you use the [Sublime Text](https://www.sublimetext.com/) text editor, this allows you to call `as_run` with the active `export` file by pressing Ctrl+B.
 Simply put `Code_Aster_as_run.sublime-build` in your User folder ("Preferences > Browse Packages... > User") and edit the file to set the correct path to your `as_run.bat`.
 
-`Code_Aster_as_run_COMM.sublime-build` will call the `export` file that has the same base name as the `*.comm` file you're building (`Ctrl + B `).
+`Code_Aster_as_run_COMM.sublime-build` will call the `export` file that has the same base name as the `*.comm` file you are building.

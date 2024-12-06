@@ -1,6 +1,16 @@
+// Call as_run.bat with this export file as argument (Code_Aster Windows)
 {
     // replace by the correct path to as_run.bat
-    "cmd": ["C:/Users/__USERNAME__/AppData/Local/code_aster/v2021/bin/as_run.bat", "$file"],
-    // "selector": "source.export" // did not work
+    "cmd": ["cmd", "/c", "%LOCALAPPDATA%/code_aster/v2023/bin/as_run.bat", "$file"],
+    "shell": true,
     "file_patterns": ["*export"], // https://stackoverflow.com/questions/60042073/sublimetext-3-build-system-based-on-file-path
+    // "selector": "source.export" // did not work
+    // "working_dir" : "$file_path",
+
+    // Error detection
+    "file_regex": "$file",
+    "line_regex": "Traceback \\(most recent call last\\):\n  File \"fort.1\", line (\\d+)",
+
+    // Syntax highlighting in build results and message files (experimental)
+    "syntax": "Code_Aster_message.sublime-syntax"
 }
